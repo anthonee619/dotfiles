@@ -13,3 +13,9 @@ config="${HOME}/.config"
 for dotfile in "${configFiles[@]}";do
     ln -sf ${dotfolder}/.config/${dotfile} ${config}/${dotfile} 
 done
+
+# ${HOME}/.bin/
+for binFilePath in ${HOME}/.dotfiles/.bin/*;do
+    binefilename="${binFilePath##*/}"
+    ln -sfv ${binFilePath} $HOME/.bin/$binefilename
+done

@@ -116,17 +116,20 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+set $M1 DP-2
+set $M2 DVI-D-0
+
 # workspace monitors
-workspace $ws1 output DP-2
-workspace $ws2 output DP-2
-workspace $ws3 output DP-2
-workspace $ws4 output DP-2
-workspace $ws5 output DP-2
-workspace $ws6 output DP-2
-workspace $ws7 output DP-2
-workspace $ws8 output DVI-D-0
-workspace $ws9 output DVI-D-0
-workspace $ws10 output DVI-D-0
+workspace $ws1 output $M1
+workspace $ws2 output $M1
+workspace $ws3 output $M1
+workspace $ws4 output $M1
+workspace $ws5 output $M1
+workspace $ws6 output $M1
+workspace $ws7 output $M1
+workspace $ws8 output $M2
+workspace $ws9 output $M2
+workspace $ws10 output $M2
 
 # workspace areas
 assign [class="discord"] $ws7 
@@ -148,11 +151,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+g exec google-chrome
 
 # Startup Applications
-exec --no-startup-id i3-msg 'workspace $ws3; exec google-chrome; workspace $ws2; exec /usr/bin/gnome-terminal'
+exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome; workspace $ws2; exec /usr/bin/gnome-terminal'
 exec discord
 exec spotify
 exec_always feh --bg-scale /home/anthony/Pictures/background.png
 exec_always xrandr --output DP-2 --below DVI-D-0
+exec workspace $ws1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -197,4 +201,8 @@ bar {
 # Pulse Audio controls
 bindsym $mod+period exec ~/.bin/volumeUp.sh #increase sound volume
 bindsym $mod+comma exec ~/.bin/volumeDown.sh #decrease sound volume
-bindsym $mod+m exec ~/.bin/volumeMute.sh # mute sound
+bindsym $mod+m exec ~/.bin/volumeMute.sh #mute sound
+bindsym $mod+Shift+period exec playerctl next #next song
+bindsym $mod+Shift+comma exec playerctl previous #previous song
+bindsym $mod+slash exec playerctl play #play song
+bindsym $mod+Shift+slash exec playerctl pause #pause song
