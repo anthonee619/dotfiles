@@ -1,5 +1,10 @@
 #!/bin/bash
 
+directories=(".bin" ".config/i3" ".config/nvim")
+for direc in "${directories[@]}"; do
+    mkdir ${HOME}/${direc}
+done
+
 dotfolder="${HOME}/.dotfiles"
 # ${HOME}
 homeFiles=(".bashrc")
@@ -17,5 +22,5 @@ done
 # ${HOME}/.bin/
 for binFilePath in ${HOME}/.dotfiles/.bin/*;do
     binefilename="${binFilePath##*/}"
-    ln -sfv ${binFilePath} $HOME/.bin/$binefilename
+    ln -sf ${binFilePath} $HOME/.bin/$binefilename
 done
