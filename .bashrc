@@ -117,3 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 alias vim="nvim"
+alias sn="cd ~/Documents/sprynet"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dps="docker ps"
