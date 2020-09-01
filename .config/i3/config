@@ -200,7 +200,7 @@ for_window [class="Spotify"] move to workspace $ws8
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome; workspace $ws2; exec /usr/bin/gnome-terminal'
 exec discord
 exec spotify
-exec_always feh --bg-scale /home/anthony/Pictures/background.png
+exec_always feh --bg-scale /home/anthony/.dotfiles/backgrounds/background.png
 #exec_always xrandr --output DP-2 --primary --below DVI-D-0
 exec_always --no-startup-id nm-applet
 
