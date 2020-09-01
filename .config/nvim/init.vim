@@ -25,10 +25,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-utils/vim-man'
 
 Plug 'preservim/nerdtree'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Color Scheme
 Plug 'gruvbox-community/gruvbox'
+
+" syntax
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
