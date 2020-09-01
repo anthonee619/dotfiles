@@ -7,7 +7,7 @@ done
 
 dotfolder="${HOME}/.dotfiles"
 # ${HOME}
-homeFiles=(".bashrc")
+homeFiles=(".bashrc" ".Xresources" ".profile")
 for dotfile in "${homeFiles[@]}";do
     ln -sf ${dotfolder}/${dotfile} ${HOME}
 done
