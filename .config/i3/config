@@ -104,6 +104,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $wsS "Spotify"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -116,9 +117,10 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+Shift+s workspace $wsS
 
-set $M1 DP-2
-set $M2 DVI-D-0
+set $M1 VGA-1
+set $M2 HDMI-1
 
 # workspace monitors
 workspace $ws1 output $M1
@@ -126,8 +128,8 @@ workspace $ws2 output $M1
 workspace $ws3 output $M1
 workspace $ws4 output $M1
 workspace $ws5 output $M1
-workspace $ws6 output $M1
-workspace $ws7 output $M1
+workspace $ws6 output $M2
+workspace $ws7 output $M2
 workspace $ws8 output $M2
 workspace $ws9 output $M2
 workspace $ws10 output $M2
@@ -192,7 +194,7 @@ bar {
 ###################   WorkSpaces  #########################################
 ########################################################################### 
 assign [class="discord"] $ws7 
-for_window [class="Spotify"] move to workspace $ws8
+for_window [class="Spotify"] move to workspace $wsS
 
 ###########################################################################
 ###################   Startup Applications   ##############################
@@ -201,7 +203,7 @@ for_window [class="Spotify"] move to workspace $ws8
 exec discord
 exec spotify
 exec_always feh --bg-scale /home/anthony/.dotfiles/backgrounds/background.png
-#exec_always xrandr --output DP-2 --primary --below DVI-D-0
+exec_always xrandr --output HDMI-1 --primary --right-of VGA-1
 exec_always --no-startup-id nm-applet
 
 # Application Binds
@@ -226,3 +228,8 @@ bindsym $mod+Shift+space exec playerctl pause #pause song
 ###################   i3Lock  #############################################
 ########################################################################### 
 bindsym $mod+i exec i3lock -c 000000
+
+###########################################################################
+###################   screenshot  #########################################
+########################################################################### 
+bindsym $mod+c exec gnome-screenshot -i
