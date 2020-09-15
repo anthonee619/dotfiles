@@ -119,8 +119,8 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Shift+s workspace $wsS
 
-set $M1 VGA-1
-set $M2 HDMI-1
+set $M1 DP-2
+set $M2 DVI-D-0
 
 # workspace monitors
 workspace $ws1 output $M1
@@ -133,6 +133,7 @@ workspace $ws7 output $M2
 workspace $ws8 output $M2
 workspace $ws9 output $M2
 workspace $ws10 output $M2
+workspace $wsS output $M2
 
 
 # move focused container to workspace
@@ -203,7 +204,7 @@ for_window [class="Spotify"] move to workspace $wsS
 exec discord
 exec spotify
 exec_always feh --bg-scale /home/anthony/.dotfiles/backgrounds/background.png
-exec_always xrandr --output HDMI-1 --primary --right-of VGA-1
+exec_always xrandr --output DP-2 --primary --below DVI-D-0
 exec_always --no-startup-id nm-applet
 
 # Application Binds
