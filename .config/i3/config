@@ -128,9 +128,9 @@ workspace $ws2 output $M1
 workspace $ws3 output $M1
 workspace $ws4 output $M1
 workspace $ws5 output $M1
-workspace $ws6 output $M2
-workspace $ws7 output $M2
-workspace $ws8 output $M2
+workspace $ws6 output $M1
+workspace $ws7 output $M1
+workspace $ws8 output $M1
 workspace $ws9 output $M2
 workspace $ws10 output $M2
 workspace $wsS output $M2
