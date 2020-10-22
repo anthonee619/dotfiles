@@ -16,7 +16,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 18
 
 
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec dbus-launch gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,6 +204,7 @@ bar {
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome; workspace $ws2; exec /usr/bin/gnome-terminal'
 #exec discord
 #exec spotify
+exec_always --no-startup-id xrdb .Xresources
 exec_always --no-startup-id feh --bg-scale /home/anthony/.dotfiles/backgrounds/background.png
 exec_always --no-startup-id xrandr --output DP-2 --primary --below DVI-D-0
 exec_always --no-startup-id nm-applet
@@ -212,7 +213,7 @@ exec_always --no-startup-id nm-applet
 ###########################################################################
 ###################   Applications   ######################################
 ########################################################################### 
-bindsym $mod+g exec chromium
+bindsym $mod+g exec chromium --force-device-scale-factor=2
 
 ###########################################################################
 ###################   Pulse Audio Controls   ##############################

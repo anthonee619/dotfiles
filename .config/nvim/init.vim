@@ -45,5 +45,7 @@ set background=dark
 
 nnoremap <SPACE> <Nop>
 let mapleader = " "
+let g:NerdTreeDirArrrowExpandable=''
+let g:NerdTreeDirArrrowCollapsible=''
 
 map <C-o> :NERDTreeToggle<CR>
