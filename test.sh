@@ -1,6 +1,5 @@
 #!/bin/bash
 
-for configFolders in ${HOME}/.dotfiles/config/*;do
-  ln -s ${configFolders} ${HOME}/.config
+for file in $HOME/.dotfiles/home/*;do
+  ln -s $file $HOME/.${file##*/}
 done
-

@@ -30,7 +30,7 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 48
+height = 65
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -52,13 +52,13 @@ module-margin-right = 2
 
 font-0 = "UbuntuMono Nerd Font:size=18;2"
 font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=18;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=18;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=18;1"
 
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio memory cpu wlan eth battery date powermenu
+modules-right = backlight pulseaudio memory cpu wlan eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -122,7 +122,7 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -130,10 +130,10 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %mb_used%
 
 [module/wlan]
 type = internal/network
@@ -157,17 +157,17 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
-type = internal/network
-interface = net0
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
+;[module/eth]
+;type = internal/network
+;interface = net0
+;interval = 3.0
+;
+;format-connected-underline = #55aa55
+;format-connected-prefix = " "
+;format-connected-prefix-foreground = ${colors.foreground-alt}
+;label-connected = %local_ip%
+;
+;ormat-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -236,7 +236,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 襤
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
@@ -257,6 +257,17 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <ramp> <label>
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = #efefef
 
 [settings]
 screenchange-reload = true

@@ -209,6 +209,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale /home/anthony/.dotfiles/backgrounds/background.png
 exec_always --no-startup-id xrandr --output DP-2 --primary --below DVI-D-0
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id udiskie &
+
 
 # Application Binds
 ###########################################################################
@@ -220,8 +222,6 @@ bindsym $mod+g exec chromium --force-device-scale-factor=2
 ###########################################################################
 ###################   Pulse Audio Controls   ##############################
 ########################################################################### 
-exec_always --no-startup-id pulseaudio --start
-
 bindsym $mod+period exec ~/.bin/volumeUp.sh #increase sound volume
 bindsym $mod+comma exec ~/.bin/volumeDown.sh #decrease sound volume
 bindsym $mod+m exec ~/.bin/volumeMute.sh #mute sound
@@ -229,6 +229,12 @@ bindsym $mod+Shift+period exec playerctl next #next song
 bindsym $mod+Shift+comma exec playerctl previous #previous song
 bindsym $mod+space exec playerctl play #play song
 bindsym $mod+Shift+space exec playerctl pause #pause song
+
+###########################################################################
+###################   Brightness Controls   ###############################
+########################################################################### 
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 ###########################################################################
 ###################   i3Lock  #############################################
