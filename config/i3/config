@@ -217,7 +217,9 @@ exec_always --no-startup-id udiskie &
 ###################   Applications   ######################################
 ########################################################################### 
 
-bindsym $mod+g exec chromium --force-device-scale-factor=2
+bindsym $mod+g exec chromium 
+
+# --force-device-scale-factor=2
 
 ###########################################################################
 ###################   Pulse Audio Controls   ##############################

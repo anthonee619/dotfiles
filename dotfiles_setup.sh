@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install the following packages
-# neovim, i3, lightdm, fonts*, light (AUR), docker, nodejs
+# neovim, i3, lightdm, fonts*, light (AUR), docker, nodejs, feh, 
 
 # add user to these groups
 # video, audio, docker
@@ -24,7 +24,7 @@ for configFolders in $dotfolder/config/*;do
   ln -si ${configFolders} ${HOME}/.config
 done
 
-ln -s $dotfolder/bin ${HOME}/scripts/
+ln -s $dotfolder/bin ${HOME}/.bin
 for file in $dotfolder/home/*;do
   ln -si $file $HOME/.${file##*/}
 done
