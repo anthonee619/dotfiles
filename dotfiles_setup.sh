@@ -2,6 +2,8 @@
 
 # Install the following packages
 # neovim, i3, lightdm, fonts*, light (AUR), docker, nodejs, feh, 
+# udiskie, 
+
 
 # add user to these groups
 # video, audio, docker
