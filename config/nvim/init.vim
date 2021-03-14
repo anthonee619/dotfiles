@@ -1,46 +1,24 @@
-syntax on 
-
-set clipboard=unnamedplus
-set noerrorbells
-set tabstop=2 softtabstop=2
-set shiftwidth=2
-set expandtab
-set smartindent
-set number relativenumber
-set nu rnu
-set nowrap
-set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey 
 call plug#begin('~/.vim/plugged')
+Plug 'neovim/nvim-lspconfig'
+" telescope & lua
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'nvim-lua/completion-nvim'
+
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 "Plug 'tpope/vim-fugitive'
-"Plug 'jremmen/vim-ripgrep'
-Plug 'vim-utils/vim-man'
-
 Plug 'preservim/nerdtree'
-"Plug 'Valloric/YouCompleteMe'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Color Scheme
 Plug 'gruvbox-community/gruvbox'
 
-" syntax
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
-
 call plug#end()
 
 colorscheme gruvbox
+highlight ColorColumn ctermbg=0 guibg=lightgrey 
 set background=dark
 
 nnoremap <SPACE> <Nop>
@@ -49,3 +27,9 @@ let g:NerdTreeDirArrrowExpandable=''
 let g:NerdTreeDirArrrowCollapsible=''
 
 map <C-o> :NERDTreeToggle<CR>
+
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.dockerls.setup{}
