@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Install the following packages
-# neovim, i3, lightdm, fonts*, light (AUR), docker, nodejs, feh, 
-# udiskie, 
+########################################################
+###############  General  ##############################
+########################################################
+# neovim, docker, nodejs,
+
+########################################################
+###############  Desktop  ##############################
+########################################################
+# i3, lightdm, udiskie, fonts, light (AUR), feh, spotifyd
 
 
 # add user to these groups
