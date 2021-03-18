@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
+Plug 'anott03/nvim-lspinstall'
 " telescope & lua
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -30,6 +31,3 @@ map <C-o> :NERDTreeToggle<CR>
 
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
-lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.dockerls.setup{}
