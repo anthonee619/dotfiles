@@ -6,3 +6,5 @@ lua require'lspconfig'.html.setup{ on_attach=require'completion'.on_attach }
 " npm install -g vscode-html-languageserver-bin
 lua require'lspconfig'.cssls.setup{ on_attach=require'completion'.on_attach }
 " npm install -g vscode-css-languageserver-bin
+lua require'lspconfig'.jedi_language_server.setup{ on_attach=require'completion'.on_attach }
+" pip install -U jedi-language-server
