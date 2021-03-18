@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'anott03/nvim-lspinstall'
 " telescope & lua
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
