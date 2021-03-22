@@ -17,6 +17,8 @@ Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
+lua require('anthonee')
+
 colorscheme gruvbox
 highlight ColorColumn ctermbg=0 guibg=lightgrey 
 set background=dark
@@ -30,3 +32,7 @@ map <C-o> :NERDTreeToggle<CR>
 
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+" Quickfix Movement 
+nnoremap <leader>qn :cn<CR>
+nnoremap <leader>qp :cp<CR>

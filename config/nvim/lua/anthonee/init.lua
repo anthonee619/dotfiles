@@ -1,1 +1,2 @@
-require('anthonee.telescope.lua');
+require('anthonee.telescope');
+require('anthonee.lsp');
