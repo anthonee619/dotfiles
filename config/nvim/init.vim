@@ -33,6 +33,11 @@ map <C-o> :NERDTreeToggle<CR>
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
+nnoremap <leader>p "_dP
+
 " Quickfix Movement 
 nnoremap <leader>qn :cn<CR>
 nnoremap <leader>qp :cp<CR>
+
+" neovim terminal
+nnoremap<leader>nt :terminal<CR>
