@@ -6,3 +6,5 @@ nnoremap <leader>pw :lua require('telescope.builtin').grep_string { search = vim
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 nnoremap <leader>T :lua require('telescope.builtin').file_browser()<CR>
+nnoremap <leader>gc :lua require('telescope.builtin').git_commits()<CR>
+nnoremap <leader>tdf :lua require('anthonee.telescope').search_dotfiles()<CR>

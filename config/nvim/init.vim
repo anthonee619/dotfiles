@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'anott03/nvim-lspinstall'
 " telescope & lua
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -18,6 +17,8 @@ Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
+lua require('anthonee')
+
 colorscheme gruvbox
 highlight ColorColumn ctermbg=0 guibg=lightgrey 
 set background=dark
@@ -31,3 +32,12 @@ map <C-o> :NERDTreeToggle<CR>
 
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+nnoremap <leader>p "_dP
+
+" Quickfix Movement 
+nnoremap <leader>qn :cn<CR>
+nnoremap <leader>qp :cp<CR>
+
+" neovim terminal
+nnoremap<leader>nt :terminal<CR>
